@@ -24,7 +24,7 @@ class Login extends MY_Controller {
 			} catch (FacebookApiException $e) {
 				$this->user = null;
 			}
-			$logout = $this->facebook->getLogoutUrl(array('next' => base_url() . 'index.php/login/logout'));
+			$logout = $this->facebook->getLogoutUrl(array('next' => base_url() . 'login/logout'));
 			//$logout = 'login/logout';
 			$user_profile = array(
 				'id' => $user_face['id'], 

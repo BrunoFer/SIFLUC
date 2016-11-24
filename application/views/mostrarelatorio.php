@@ -1,3 +1,7 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
 <div class="container">
 	<div class="col-md-1"></div>
 	<div class="col-md-10">

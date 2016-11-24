@@ -44,10 +44,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						aria-expanded="false">Entradas <span class="caret"></span> </a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="<?php echo base_url('index.php/movimentacoes/cadastroentrada')?>">Cadastrar</a>
+								href="<?php echo base_url('movimentacoes/cadastroentrada')?>">Cadastrar</a>
 							</li>
 							<li><a
-								href="<?php echo base_url('index.php/movimentacoes/entradas')?>">Listar</a>
+								href="<?php echo base_url('movimentacoes/entradas')?>">Listar</a>
 							</li>
 						</ul>
 					</li>
@@ -56,18 +56,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						aria-expanded="false">Saídas <span class="caret"></span> </a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="<?php echo base_url('index.php/movimentacoes/cadastrosaida')?>">Cadastrar</a>
+								href="<?php echo base_url('movimentacoes/cadastrosaida')?>">Cadastrar</a>
 							</li>
 							<li><a
-								href="<?php echo base_url('index.php/movimentacoes/saidas')?>">Listar</a>
+								href="<?php echo base_url('movimentacoes/saidas')?>">Listar</a>
 							</li>
 						</ul>
 					</li>
 					<li><a
-						href="<?php echo base_url('index.php/movimentacoes/saldos')?>">Saldos</a>
+						href="<?php echo base_url('movimentacoes/saldos')?>">Saldos</a>
 					</li>
 					<li><a
-						href="<?php echo base_url('index.php/movimentacoes/relatorios')?>">Relatórios</a>
+						href="<?php echo base_url('movimentacoes/relatorios')?>">Relatórios</a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							src="<?php echo $user_profile['icone']?>"> <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="<?php echo base_url('index.php/login/profile')?>">Perfil</a></li>
+							<li><a href="<?php echo base_url('login/profile')?>">Perfil</a></li>
 							<li role="separator" class="divider"></li>
 							<li><a href="<?php echo $user_profile['logout']?>">Sair</a></li>
 						</ul>
