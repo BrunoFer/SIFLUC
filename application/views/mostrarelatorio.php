@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="col-md-1"></div>
 	<div class="col-md-10">
 
-	<?php if (@$listaEntrada){ ?>
+	<?php if (isset($listaEntrada)){ ?>
 		<table id="tabelaEntrada" class="table table-striped">
 			<thead>
 				<tr colspan='4'>
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php } ?>
 
 
-		<?php if (@$listaSaida){ ?>
+		<?php if (isset($listaSaida)){ ?>
 		<table id="tabelaEntrada" class="table table-striped">
 			<thead>
 				<tr colspan='4'>
@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</table>
 		<?php
 
-		if (@$somaEntradas && @$somaSaidas) {
+		if (isset($somaEntradas) && isset($somaSaidas)) {
 			$soma = $somaEntradas - $somaSaidas;?>
 		<div class="col-md-4"></div>
 		<div class="col-md-4 text-center">

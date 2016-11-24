@@ -44,7 +44,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="row col-md-12 top30">
 	<?php
-	if (@$retorno){ ?>
+	if (isset($retorno)){
+		?>
 		<div class="col-md-4"></div>
 		<div class="col-md-4 text-center">
 			<fieldset>
