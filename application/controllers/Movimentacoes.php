@@ -118,10 +118,9 @@ class Movimentacoes extends MY_Controller {
 				$datept = explode('/', $date);
 				$dateen = $datept[2].'-'.$datept[1].'-'.$datept[0];
 				$condicao = array('DATE(data) =' => $dateen);
-				$saldoEntradas = $this->MovEntrada->getSomaEntradas($condicao);
-				$saldoSaidas = $this->MovSaida->getSomaSaidas($condicao);
+				$saldo = $this->saldo($condicao);
 				$data['data'] = $date;
-				$data['retorno'] = $saldoEntradas-$saldoSaidas;
+				$data['retorno'] = $saldo;
 				$this->render('saldos_view',$data);
 			}
 		}

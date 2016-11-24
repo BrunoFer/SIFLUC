@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							src="<?php echo $user_profile['icone']?>"> <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Perfil</a></li>
+							<li><a href="<?php echo base_url('index.php/login/profile')?>">Perfil</a></li>
 							<li role="separator" class="divider"></li>
 							<li><a href="<?php echo $user_profile['logout']?>">Sair</a></li>
 						</ul>

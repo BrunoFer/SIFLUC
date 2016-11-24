@@ -25,9 +25,12 @@ class Login extends MY_Controller {
 				$this->user = null;
 			}
 			$logout = $this->facebook->getLogoutUrl(array('next' => base_url() . 'index.php/login/logout'));
+			//$logout = 'login/logout';
 			$user_profile = array(
+				'id' => $user_face['id'], 
 		        'nome'  => $user_face['first_name'],
 		        'sobrenome'     => $user_face['last_name'],
+				'link'     => $user_face['link'],
 		        'email' => $user_face['email'],
 				'icone' => "https://graph.facebook.com/".$user_face['id']."/picture",
 			    'logout' => $logout
@@ -43,6 +46,10 @@ class Login extends MY_Controller {
 			$this->render('login', $data, 'login');
 		}
 
+	}
+	
+	public function profile(){
+		$this->render('profile');
 	}
 
 	public function logout(){
