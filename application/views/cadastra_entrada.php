@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div id="container">
+<div class="container" id="container">
 
 <?php echo form_open('movimentacoes/enviaentrada'); ?>
 
