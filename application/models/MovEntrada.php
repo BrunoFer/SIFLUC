@@ -51,10 +51,4 @@ class MovEntrada extends CI_Model{
 		return $query->row()->soma;
 	}
 
-	public function get_last_ten_entries()
-	{
-		$query = $this->db->get(TABELA_MOV_ENTRADA, 10);
-		return $query->result();
-	}
-
 }

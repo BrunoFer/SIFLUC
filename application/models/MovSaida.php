@@ -51,11 +51,4 @@ class MovSaida extends CI_Model{
 		return $query->row()->soma;
 	}
 
-
-	public function get_last_ten_entries()
-	{
-		$query = $this->db->get(TABELA_MOV_SAIDA, 10);
-		return $query->result();
-	}
-
 }
