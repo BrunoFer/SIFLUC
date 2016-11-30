@@ -183,6 +183,7 @@ class Movimentacoes extends MY_Controller {
 			$data['erro'] = "Erro: Selecione ao menos um tipo de movimentação.";
 			$this->render('relatorios', $data);
 		} else {
+			$data["condicoes"] = $condicoes;
 			$this->render('mostrarelatorio', $data);
 		}
 
