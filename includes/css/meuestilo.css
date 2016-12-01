@@ -66,3 +66,7 @@ body {
 .top30 {
 	margin-top: 30px;
 }
+
+.radio label{
+    margin-right: 10px;
+}

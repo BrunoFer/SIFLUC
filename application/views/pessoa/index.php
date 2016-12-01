@@ -8,23 +8,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <table id="tabela" class="display" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <td>Data</td>
-                    <?php if (@$lista[0]->cliente) { ?>
-                        <td>Cliente</td>
-                    <?php } else { ?>
-                        <td>Fornecedor</td>
-                    <?php } ?>
-                    <td>Comentário</td>
-                    <td>Valor (R$)</td>
+                    <td>Tipo</td>
+                    <td>Nome/Razão Social</td>
+                    <td>Apelido/Nome Fantasia</td>
+                    <td>CPF/CNPJ</td>
+                    <td>Email</td>
+                    <td>Telefone</td>
+                    <td>Endereço</td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($lista as $registro) { ?>
                     <tr>
-                        <td><?php echo date('d/m/Y h:i', strtotime($registro->data)); ?></td>
+                        
+                        <td><?php echo $registro->tipo; ?></td>
                         <td><?php echo $registro->nome; ?></td>
-                        <td><?php echo $registro->comentario; ?></td>
-                        <td><?php echo number_format($registro->valor, 2, ',', '.'); ?></td>
+                        <td><?php echo $registro->apelido; ?></td>
+                        <td><?php echo $registro->documento; ?></td>
+                        <td><?php echo $registro->email; ?></td>
+                        <td><?php echo $registro->telefone; ?></td>
+                        <td><?php echo $registro->cep; ?></td>
+                        <td><a href="<?php echo site_url('pessoa/cadastro/'.$registro->id);?>">Editar</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -62,3 +67,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });
     });
 </script>
+
+

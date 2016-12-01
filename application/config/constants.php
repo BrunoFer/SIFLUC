@@ -85,5 +85,6 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 // nomes das tabelas do banco de dados
-defined('TABELA_MOV_SAIDA')      OR define('TABELA_MOV_SAIDA', 'mov_saidas'); // highest automatically-assigned error code
-defined('TABELA_MOV_ENTRADA')      OR define('TABELA_MOV_ENTRADA', 'mov_entradas'); // highest automatically-assigned error code
+defined('TABELA_MOV_SAIDA')      OR define('TABELA_MOV_SAIDA', 'mov_saidas');
+defined('TABELA_MOV_ENTRADA')      OR define('TABELA_MOV_ENTRADA', 'mov_entradas');
+defined('TABELA_PESSOA')      OR define('TABELA_PESSOA', 'pessoas');

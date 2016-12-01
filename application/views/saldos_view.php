@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div class="container text-center">
+<div id="container" class="container text-center">
 	<div class="row">
 		<div class="col-md-4">
 			<strong>Saldo do dia:<strong>
@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-md-2">
 			<div class="form-group	row">
 				<label for="data">Busca de saldo por um dia específico</label> <input
-					type="data" class="form-control" name="data" id="data"
+					type="data" class="form-control" name="data" id="databusca"
 					placeholder="Data" />
 			</div>
 			<div class="text-center">
@@ -62,21 +62,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 
-<br>
-<br>
-
-<script
-	src="<?php echo base_url('includes/bootstrap/bootstrap-datepicker.min.js')?>"></script>
-<script
-	src="<?php echo base_url('includes/bootstrap/bootstrap-datepicker.pt-BR.min.js')?>"></script>
-
-
 <script type="text/javascript">
-	$(function () {
-		$('#data').datepicker({
-			format: "dd/mm/yyyy",
-			language: 'pt-BR',
-			autoclose: true,
-		});
-	});
+    $(function () {
+        $('#databusca').datepicker({
+                format: "dd/mm/yyyy",
+                language: 'pt-BR',
+                autoclose: true,
+        });
+    });
 </script>

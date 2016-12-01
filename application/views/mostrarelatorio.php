@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<tr>
 					<td><?php echo date('d/m/Y h:i',strtotime($registroEntrada->data));?>
 					</td>
-					<td><?php echo $registroEntrada->cliente;?></td>
+					<td><?php echo $registroEntrada->nome;?></td>
 					<td><?php echo $registroEntrada->comentario;?></td>
 					<td><?php echo number_format($registroEntrada->valor, 2, ',', '.');?>
 					</td>
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<tr>
 					<td><?php echo date('d/m/Y h:i',strtotime($registroSaida->data));?>
 					</td>
-					<td><?php echo $registroSaida->fornecedor;?></td>
+					<td><?php echo $registroSaida->nome;?></td>
 					<td><?php echo $registroSaida->comentario;?></td>
 					<td><?php echo number_format($registroSaida->valor, 2, ',', '.');?>
 					</td>
