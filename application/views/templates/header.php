@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="<?php echo base_url('includes/bootstrap/bootstrap-datetimepicker.min.js') ?>"></script>
         <script src="<?php echo base_url('includes/bootstrap/bootstrap-datetimepicker.pt-BR.js') ?>"></script>
         <script src="<?php echo base_url('includes/js/myscript.js') ?>"></script>
-        
+
 
         <nav class="navbar navbar-default">
             <div class="container">
@@ -49,40 +49,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle"
                                data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">Movimentacoes <span class="caret"></span> </a>
+                            <ul class="dropdown-menu">
+                                <li><a
+                                        href="<?php echo base_url('movimentacoes/cadastroentrada') ?>">Registrar Entrada</a>
+                                </li>
+                                <li><a
+                                        href="<?php echo base_url('movimentacoes/entradas') ?>">Entradas</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a
+                                        href="<?php echo base_url('movimentacoes/cadastrosaida') ?>">Registrar saída</a>
+                                </li>
+                                <li><a
+                                        href="<?php echo base_url('movimentacoes/saidas') ?>">Saídas</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a
+                                        href="<?php echo base_url('movimentacoes/saldos') ?>">Acompanhar saldo</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false">Pessoa <span class="caret"></span> </a>
                             <ul class="dropdown-menu">
                                 <li><a href="<?php echo base_url('pessoa/cadastro') ?>">Cadastrar</a></li>
-                                <li><a href="<?php echo base_url('pessoa/index') ?>">Pessoas</a></li>
+                                <li><a href="<?php echo base_url('pessoa/index') ?>">Listar</a></li>
                             </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Entradas <span class="caret"></span> </a>
-                            <ul class="dropdown-menu">
-                                <li><a
-                                        href="<?php echo base_url('movimentacoes/cadastroentrada') ?>">Cadastrar</a>
-                                </li>
-                                <li><a
-                                        href="<?php echo base_url('movimentacoes/entradas') ?>">Listar</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"
-                               data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Saídas <span class="caret"></span> </a>
-                            <ul class="dropdown-menu">
-                                <li><a
-                                        href="<?php echo base_url('movimentacoes/cadastrosaida') ?>">Cadastrar</a>
-                                </li>
-                                <li><a
-                                        href="<?php echo base_url('movimentacoes/saidas') ?>">Listar</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a
-                                href="<?php echo base_url('movimentacoes/saldos') ?>">Saldos</a>
                         </li>
                         <li><a
                                 href="<?php echo base_url('movimentacoes/relatorios') ?>">Relatórios</a>

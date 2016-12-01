@@ -7,6 +7,8 @@ class Pessoa extends MY_Controller {
 
         //carrega o model
         $this->load->model('ModelPessoa');
+        $this->load->model('MovSaida');
+        $this->load->model('MovEntrada');
     }
 
     public function index() {
@@ -92,7 +94,7 @@ class Pessoa extends MY_Controller {
             $lista = $this->ModelPessoa->getPessoas($nome);
             if (count($lista) > 0) {
                 foreach ($lista as $pessoa) {
-                    $array[] = $pessoa->nome . ' (' . $pessoa->email . ')';
+                    $array[] = $pessoa->id.'- '.$pessoa->nome . ' (' . $pessoa->email . ')';
                 }
                 echo json_encode($array);
             }

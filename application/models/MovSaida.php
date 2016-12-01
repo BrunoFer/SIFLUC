@@ -37,7 +37,7 @@ class MovSaida extends CI_Model{
 			$this->db->where($condicao);
 		}
 		$this->db->order_by("data", "desc");
-                $this->db->join(TABELA_PESSOA, 'pessoas.email = mov_saidas.fornecedor');
+                $this->db->join(TABELA_PESSOA, 'pessoas.id = mov_saidas.fornecedor');
 		$query = $this->db->get(TABELA_MOV_SAIDA);
 		//print_r($this->db);
 		return $query->result();

@@ -3,8 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 <div id="container" class="container text-center">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-12">
         <table id="tabela" class="display" cellspacing="0" width="100%">
             <thead>
                 <tr>
@@ -28,14 +27,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <td><?php echo $registro->documento; ?></td>
                         <td><?php echo $registro->email; ?></td>
                         <td><?php echo $registro->telefone; ?></td>
-                        <td><?php echo $registro->cep; ?></td>
+                        <td><?php echo $registro->rua.' Nº '.$registro->numero.'-'.$registro->bairro.
+                                '-'.$registro->cidade.'/'.$registro->estado.'-CEP '.$registro->cep; ?></td>
                         <td><a href="<?php echo site_url('pessoa/cadastro/'.$registro->id);?>">Editar</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
-    <div class="col-md-1"></div>
 </div>
 
 <script type="text/javascript">

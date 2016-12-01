@@ -37,7 +37,7 @@ class MovEntrada extends CI_Model{
 			$this->db->where($condicao);
 		}
 		$this->db->order_by("data", "desc");
-                $this->db->join(TABELA_PESSOA, 'pessoas.email = mov_entradas.cliente');
+                $this->db->join(TABELA_PESSOA, 'pessoas.id = mov_entradas.cliente');
 		$query = $this->db->get(TABELA_MOV_ENTRADA);
 		//print_r($this->db);
 		return $query->result();

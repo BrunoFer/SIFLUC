@@ -68,7 +68,7 @@ class Movimentacoes extends MY_Controller {
                 $data['data'] = $this->reverseDateLang($date);
             }
             $data['valor'] = $this->input->post('valor');
-            $data['fornecedor'] = $this->between("(", ")", $this->input->post('fornecedor'));
+            $data['fornecedor'] = (int)strtok($this->input->post('fornecedor'),'-');
             //$data['fornecedor'] = $this->input->post('fornecedor');
             $data['comentario'] = $this->input->post('comentario');
 
@@ -94,7 +94,7 @@ class Movimentacoes extends MY_Controller {
                 $data['data'] = $this->reverseDateLang($date);
             }
             $data['valor'] = $this->input->post('valor');
-            $data['cliente'] = $this->between("(", ")", $this->input->post('cliente'));
+            $data['cliente'] = (int)strtok($this->input->post('cliente'),'-');
             //$data['cliente'] = $this->input->post('cliente');
             $data['comentario'] = $this->input->post('comentario');
 
@@ -130,7 +130,7 @@ class Movimentacoes extends MY_Controller {
 
         $datainicio = $this->input->post('datainicio');
         $datafim = $this->input->post('datafim');
-        $nome = $this->between("(", ")", $this->input->post('nome'));
+        $pessoa = (int)strtok($this->input->post('nome'),'-');
         $checkentrada = $this->input->post('entrada');
         $checksaida = $this->input->post('saida');
 
@@ -160,19 +160,19 @@ class Movimentacoes extends MY_Controller {
         }
 
         if ($checkentrada == 'on') {
-            if ($nome) {
-                $condicoes['cliente'] = $nome;
+            if ($pessoa) {
+                $condicoes['cliente'] = $pessoa;
             }
             $entradas = $this->MovEntrada->getEntradas($condicoes);
             $data['listaEntrada'] = $entradas;
         }
 
         if ($checksaida == 'on') {
-            if ($nome && $checkentrada == 'on') {
+            if ($pessoa && $checkentrada == 'on') {
                 array_pop($condicoes);
-                $condicoes['fornecedor'] = $nome;
+                $condicoes['fornecedor'] = $pessoa;
             } else if ($nome) {
-                $condicoes['fornecedor'] = $nome;
+                $condicoes['fornecedor'] = $pessoa;
             }
             $saidas = $this->MovSaida->getSaidas($condicoes);
             $data['listaSaida'] = $saidas;
