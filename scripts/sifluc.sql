@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2016 at 08:35 PM
+-- Generation Time: Dec 01, 2016 at 08:46 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `mov_entradas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `valor` double NOT NULL,
   `comentario` text,
   `cliente` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `mov_entradas`
@@ -44,7 +44,8 @@ INSERT INTO `mov_entradas` (`id`, `data`, `valor`, `comentario`, `cliente`) VALU
 (2, '2016-12-01 22:23:16', 404.5, 'Livros', 3),
 (3, '2016-12-01 22:26:41', 300, '', 2),
 (4, '2016-12-01 22:34:10', 128.9, '', 1),
-(5, '2016-12-01 22:34:16', 100, '', 5);
+(5, '2016-12-01 22:34:16', 100, '', 5),
+(6, '2016-11-30 07:25:00', 100, '', 1);
 
 -- --------------------------------------------------------
 
@@ -54,7 +55,7 @@ INSERT INTO `mov_entradas` (`id`, `data`, `valor`, `comentario`, `cliente`) VALU
 
 CREATE TABLE IF NOT EXISTS `mov_saidas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `valor` double NOT NULL,
   `comentario` text,
   `fornecedor` int(11) NOT NULL,
@@ -104,7 +105,7 @@ INSERT INTO `pessoas` (`id`, `nome`, `apelido`, `tipo`, `documento`, `telefone`,
 (2, 'Padaria e Mercearia Pio XII Ltda', 'Padaria Pio XII', 'Juridica', '00.001.111/1111-1', '(32)33671-494', 'padaria@gmail.com', '', '', '', '', '', ''),
 (3, 'Maria Martha', 'Martinha', 'Fisica', '192.146.234-98', '(32)99912-1314', 'maria.m@gmail.com', '36.200-010', 'Rua Teobaldo Tolendal', '312', 'Centro', 'Barbacena', 'MG'),
 (4, 'Submarino Ltda', 'Submarino', 'Juridica', '12.321.312/3123-1', '(11)22211-111', 'submarino@gmail.com', '36.080-080', 'Rua Coronel Vidal', '80', 'Mariano Procópio', 'Juiz de Fora', 'MG'),
-(5, 'Marcio', '', 'Fisica', '999.889.779-98', '(51)22222-222', 'marcio@gmail.com', '66.080-580', 'Vila Nazaré', '', 'Pedreira', 'Belém', 'PA');
+(5, 'Marcio', 'Marcio', 'Fisica', '999.889.779-98', '(51)22222-222', 'marcio.braga@gmail.com', '66.080-580', 'Vila Nazaré', '', 'Pedreira', 'Belém', 'PA');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -171,7 +171,7 @@ class Movimentacoes extends MY_Controller {
             if ($pessoa && $checkentrada == 'on') {
                 array_pop($condicoes);
                 $condicoes['fornecedor'] = $pessoa;
-            } else if ($nome) {
+            } else if ($pessoa) {
                 $condicoes['fornecedor'] = $pessoa;
             }
             $saidas = $this->MovSaida->getSaidas($condicoes);
