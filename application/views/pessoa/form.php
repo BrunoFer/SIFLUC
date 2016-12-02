@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="form-group">
             <label for="telefone">Telefone</label>
-            <input type="text" class="form-control" data-mask="(00)00000-0000" name="telefone" placeholder="Telefone" value="<?php echo set_value('telefone'); ?>">
+            <input type="text" class="form-control" data-mask="(00)000000000" name="telefone" placeholder="Telefone" value="<?php echo set_value('telefone'); ?>">
         </div>
     </div>
 

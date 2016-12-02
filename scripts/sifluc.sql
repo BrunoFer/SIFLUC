@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2016 at 08:46 PM
+-- Generation Time: Dec 02, 2016 at 11:26 AM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -82,8 +82,8 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
   `nome` varchar(100) NOT NULL,
   `apelido` varchar(100) DEFAULT NULL,
   `tipo` set('Fisica','Juridica') DEFAULT NULL,
-  `documento` varchar(17) DEFAULT NULL,
-  `telefone` varchar(14) DEFAULT NULL,
+  `documento` varchar(18) DEFAULT NULL,
+  `telefone` varchar(13) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `cep` varchar(10) DEFAULT NULL,
   `rua` varchar(100) DEFAULT NULL,
@@ -94,18 +94,19 @@ CREATE TABLE IF NOT EXISTS `pessoas` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `documento` (`documento`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `pessoas`
 --
 
 INSERT INTO `pessoas` (`id`, `nome`, `apelido`, `tipo`, `documento`, `telefone`, `email`, `cep`, `rua`, `numero`, `bairro`, `cidade`, `estado`) VALUES
-(1, 'Bruno', 'Bruno', 'Fisica', '012.832.312-31', '(32)98451-1233', 'bruno@gmail.com', '08.465-312', 'Rua Quarenta e Sete', '275/301', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP'),
-(2, 'Padaria e Mercearia Pio XII Ltda', 'Padaria Pio XII', 'Juridica', '00.001.111/1111-1', '(32)33671-494', 'padaria@gmail.com', '', '', '', '', '', ''),
-(3, 'Maria Martha', 'Martinha', 'Fisica', '192.146.234-98', '(32)99912-1314', 'maria.m@gmail.com', '36.200-010', 'Rua Teobaldo Tolendal', '312', 'Centro', 'Barbacena', 'MG'),
-(4, 'Submarino Ltda', 'Submarino', 'Juridica', '12.321.312/3123-1', '(11)22211-111', 'submarino@gmail.com', '36.080-080', 'Rua Coronel Vidal', '80', 'Mariano Procópio', 'Juiz de Fora', 'MG'),
-(5, 'Marcio', 'Marcio', 'Fisica', '999.889.779-98', '(51)22222-222', 'marcio.braga@gmail.com', '66.080-580', 'Vila Nazaré', '', 'Pedreira', 'Belém', 'PA');
+(1, 'Bruno', 'Bruno', 'Fisica', '012.832.312-31', '(32)98451123', 'bruno@gmail.com', '08.465-312', 'Rua Quarenta e Sete', '275/301', 'Jardim São Paulo(Zona Leste)', 'São Paulo', 'SP'),
+(2, 'Padaria e Mercearia Pio XII Ltda', 'Padaria Pio XII', 'Juridica', '00.001.111/1111-13', '(32)33671494', 'padaria@gmail.com', '', '', '', '', '', ''),
+(3, 'Maria Martha', 'Martinha', 'Fisica', '192.146.234-98', '(32)99912131', 'maria.m@gmail.com', '36.200-010', 'Rua Teobaldo Tolendal', '312', 'Centro', 'Barbacena', 'MG'),
+(4, 'Submarino Ltda', 'Submarino', 'Juridica', '12.321.312/3123-17', '(11)22211111', 'submarino@gmail.com', '36.080-080', 'Rua Coronel Vidal', '80', 'Mariano Procópio', 'Juiz de Fora', 'MG'),
+(5, 'Marcio', 'Marcio', 'Fisica', '999.889.779-98', '(51)22222222', 'marcio.braga@gmail.com', '66.080-580', 'Vila Nazaré', '', 'Pedreira', 'Belém', 'PA'),
+(6, 'shoptime', 'shoptime', 'Juridica', '12.344.555/5566-69', '(32)33333-333', 'shoptime@gmail.com', '', '', '', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -16,8 +16,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ?>
         </div>
         <div class="radio text-center">
-            <label><input type="radio" name="tipopessoa" value="Fisica" <?php echo $pessoa->tipo ?> checked="true">Pessoa Física</label>
-            <label><input type="radio" name="tipopessoa" value="Juridica" <?php echo set_radio('tipopessoa', 'Juridica'); ?>>Pessoa Jurídica</label>
+            <?php if ($pessoa->tipo == 'Fisica'){ ?>
+            <label><input type="radio" name="tipopessoa" value="Fisica" checked="true">Pessoa Física</label>
+            <label><input type="radio" name="tipopessoa" value="Juridica">Pessoa Jurídica</label>
+            <?php } else { ?>
+            <label><input type="radio" name="tipopessoa" value="Fisica">Pessoa Física</label>
+            <label><input type="radio" name="tipopessoa" value="Juridica" checked="true">Pessoa Jurídica</label>
+            <?php } ?>
         </div>
     </div>
 
@@ -40,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="form-group" id="cnpj">
             <label for="cnpj">CNPJ</label> 
-            <input type="text" class="form-control" data-mask="00.000.000/0000-00" data-mask-reverse="true" name="cnpj" placeholder="CNPJ" value="<?php echo $pessoa->documento; ?>">
+            <input type="text" class="form-control" data-mask="00.000.000/0000-00" name="cnpj" placeholder="CNPJ" value="<?php echo $pessoa->documento; ?>">
         </div>
         <div class="form-group">
             <label for="email">E-mail</label>
@@ -48,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="form-group">
             <label for="telefone">Telefone</label>
-            <input type="text" class="form-control" data-mask="(00)00000-0000" name="telefone" placeholder="Telefone" value="<?php echo $pessoa->telefone; ?>">
+            <input type="text" class="form-control" data-mask="(00)000000000" name="telefone" placeholder="Telefone" value="<?php echo $pessoa->telefone; ?>">
         </div>
     </div>
 
