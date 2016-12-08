@@ -52,4 +52,23 @@ class MovSaida extends CI_Model{
 		return $query->row()->soma;
 	}
 
+        //SELECT sum(mov_saidas.valor),pessoas.id, pessoas.nome FROM mov_saidas inner join pessoas on 
+        //mov_saidas.fornecedor=pessoas.id group by pessoas.id order by sum(mov_saidas.valor) desc limit 3
+        
+        public function getMaioresSaidas($condicao = null){
+            $this->db->select('sum('.TABELA_MOV_SAIDA.'.valor) as soma, '.TABELA_PESSOA.'.id, '.TABELA_PESSOA.'.nome');
+            if ($condicao){
+                $this->db->where($condicao);
+            }
+            $this->db->from(TABELA_MOV_SAIDA);
+            $this->db->join(TABELA_PESSOA,TABELA_MOV_SAIDA.'.fornecedor='.TABELA_PESSOA.'.id');
+            $this->db->group_by(TABELA_PESSOA.'.id');
+            $this->db->order_by('sum('.TABELA_MOV_SAIDA.'.valor)','desc');
+            $this->db->limit(3);
+            $query = $this->db->get();
+            return $query->result();
+        }
+                
+                
+        
 }

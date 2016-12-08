@@ -83,6 +83,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li><a
                                 href="<?php echo base_url('movimentacoes/relatorios') ?>">Relatórios</a>
                         </li>
+                        <li><a
+                                href="<?php echo base_url('movimentacoes/dashboard') ?>">Dashboard</a>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown"><a href="#" class="dropdown-toggle"

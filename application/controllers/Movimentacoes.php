@@ -54,6 +54,13 @@ class Movimentacoes extends MY_Controller {
         $this->render('relatorios');
     }
 
+    public function dashboard() {
+        $condicao = date('m').'= month(data) ';
+        $data['maioresfornecedores'] = $this->MovSaida->getMaioresSaidas($condicao);
+        $data['maioresclientes'] = $this->MovEntrada->getMaioresEntradas($condicao);
+        $this->render('dashboard',$data);
+    }
+
     public function enviasaida() {
         $this->load->library('form_validation');
 
@@ -68,7 +75,7 @@ class Movimentacoes extends MY_Controller {
                 $data['data'] = $this->reverseDateLang($date);
             }
             $data['valor'] = $this->input->post('valor');
-            $data['fornecedor'] = (int)strtok($this->input->post('fornecedor'),'-');
+            $data['fornecedor'] = (int) strtok($this->input->post('fornecedor'), '-');
             //$data['fornecedor'] = $this->input->post('fornecedor');
             $data['comentario'] = $this->input->post('comentario');
 
@@ -94,7 +101,7 @@ class Movimentacoes extends MY_Controller {
                 $data['data'] = $this->reverseDateLang($date);
             }
             $data['valor'] = $this->input->post('valor');
-            $data['cliente'] = (int)strtok($this->input->post('cliente'),'-');
+            $data['cliente'] = (int) strtok($this->input->post('cliente'), '-');
             //$data['cliente'] = $this->input->post('cliente');
             $data['comentario'] = $this->input->post('comentario');
 
@@ -130,7 +137,7 @@ class Movimentacoes extends MY_Controller {
 
         $datainicio = $this->input->post('datainicio');
         $datafim = $this->input->post('datafim');
-        $pessoa = (int)strtok($this->input->post('nome'),'-');
+        $pessoa = (int) strtok($this->input->post('nome'), '-');
         $checkentrada = $this->input->post('entrada');
         $checksaida = $this->input->post('saida');
 
@@ -193,6 +200,23 @@ class Movimentacoes extends MY_Controller {
         return $saldoEntradas - $saldoSaidas;
     }
 
+    public function dadosgrafico() {
+        $condicao = date('m').'= month(data) ';
+        $somasaidas = explode(".",$this->MovSaida->getSomaSaidas($condicao));
+        $somaentradas = explode(".",$this->MovEntrada->getSomaEntradas($condicao));
+        
+        $dados['movimentos'] = array(
+            'Movimentação' => 'Em R$',
+            'Entradas' => (float)($somaentradas[0].','.$somaentradas[1]),
+            'Saídas' => (float)($somasaidas[0].','.$somasaidas[1])
+        );
+        $dados['opcoes'] = array(
+            'title' => 'Movimentações no mês'
+        );
+
+        echo json_encode($dados);
+    }
+    
     private function reverseDateLang($date) {
         $dateptbr = explode(' ', $date);
         $onlydate = explode('/', $dateptbr[0]);
